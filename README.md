@@ -2,7 +2,7 @@
 This is a tetris game written from scratch in NASM x64 assembly language for 64 bit Linux.
 It uses `xlib` to handle all graphics.
 
-Showcase Video:
+Showcase Video: https://youtu.be/XTJ5r4sbfGY
 
 ## How To Play
 After cloning or downloading this repo, build the program with `make` and then run it with `./tetris`.
