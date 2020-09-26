@@ -1,4 +1,4 @@
-# tetris_x64_assembly
+# Tetris x64 Assembly
 This is a tetris game written from scratch in NASM x64 assembly language for 64 bit Linux.
 It uses `xlib` to handle all graphics.
 
