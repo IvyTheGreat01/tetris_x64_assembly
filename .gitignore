@@ -1,0 +1,7 @@
+# Ivan Bystrov
+# 26 September 2020
+#
+# Ignore all these files in git
+
+tetris
+*.o
