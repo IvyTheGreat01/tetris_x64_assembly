@@ -77,17 +77,19 @@ gamemap:	resb 220
 ; ========== data ==========
 	section .data
 ; Length of tiles in pixels
+; ========== CHANGE THIS VALUE TO CHANGE THE GAME SIZE =========
 tile_len:	dd 60
+
+; Number of milliseconds between next game state update
+; When interval == 500, tetronimos drop one tile every 0.5 seconds
+; ========== CHANGE THIS VALUE TO CHANGE THE GAME SPEED ========
+interval:	dd 500
 
 ; Width and height of the game board in tiles
 ; IF YOU CHANGE THESE VALUES YOU MUST CHANGE gamemap:
 width:		dd 10
 height: 	dd 22
 gamemap_len:	dd 10 * 22
-
-; Number of seconds between next game state update
-; INCREASE THIS VALUE TO SLOW DOWN GAME SPEED 
-interval:	dd 500		; in thousandths of a second
 
 ; Xlib constants
 ExposureMask:	dq 32768
@@ -751,7 +753,7 @@ checkFallingLoopEnd:
 	je	stopFallingLoopEnd
 	mov	ebx, ecx
 	dec	ebx
-stopFallingLoopStart:
+	stopFallingLoopStart:
 	mov	dl, [gamemap + ebx]
 	and	dl, [statusmask]
 	cmp	dl, 0
@@ -1085,7 +1087,6 @@ main:
 	mov	ebx, [tile_len]
 	mov	eax, [width]
 	mul	ebx
-	;xor	r8, r8
 	mov	r8d, eax
 	mov	eax, [height]
 	sub	eax, 2
@@ -1094,7 +1095,6 @@ main:
 
 	mov	rax, 0
 	push	rax
-	;xor	rax, rax
 	mov	eax, [black]
 	push	rax
 	push 	rax
