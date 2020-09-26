@@ -449,7 +449,7 @@ rotateReturn:
 	pop	rbp
 	pop	rbp
 	ret
-; ---------- Rotates all falling tiles if possible
+; ---------- Rotates all falling tiles if possible ----------
 
 
 ; ---------- Moves all falling tiles left or right if possible ----------
@@ -798,7 +798,7 @@ dropFallingLoopEnd:
 ; ---------- Stops all falling tiles if at least one should be stopped, otherwise drops all falling down one tile ----------
 
 
-; ---------- Allocates all XColor structs
+; ---------- Allocates all XColor structs ----------
 ; void AllocateColors()
 AllocateColors:
 	push	rbp
