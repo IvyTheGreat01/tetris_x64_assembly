@@ -753,7 +753,7 @@ checkFallingLoopEnd:
 	je	stopFallingLoopEnd
 	mov	ebx, ecx
 	dec	ebx
-	stopFallingLoopStart:
+stopFallingLoopStart:
 	mov	dl, [gamemap + ebx]
 	and	dl, [statusmask]
 	cmp	dl, 0
